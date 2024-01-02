@@ -59,6 +59,7 @@ h5 {
 }
 
 .buttonDisciplina {
+    cursor: pointer;
     width: 100px;
     align-items: center;
     border-radius: 12px;
@@ -98,6 +99,7 @@ h5 {
 }
 
 .buttonModel {
+    cursor: pointer;
     align-items: center;
     border-radius: 12px;
     background-color: var(--Visual-primaria-ativo, #e9ff1a);

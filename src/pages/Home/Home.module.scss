@@ -1,15 +1,20 @@
-.div {
+.divGeral {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px 30px 10px 30px;
+}
+.divHome {
     background-color: #0f0f0f;
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 50px 210px;
+    padding: 10px 280px 10px 280px;
 }
 
 .background {
-    background-color: #0f0f0f;
     margin: 0px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .container {
@@ -28,24 +33,25 @@ h1 {
     line-height: 18px; 
 }
 
-.header {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 195px;
-}
-
 .releaseNote{
+    cursor: pointer;
+    width: 150px;
     align-items: center;
     border-radius: 12px;
     background-color: var(--Visual-primaria-ativo, #e9ff1a);
     display: flex;
-    gap: 5px;
-    margin: 0px 25px 0px 0px;
+    gap: 10px;
+    margin: 0px 80px;
+}
 
-    p{
-        margin: 0px;
+.header {
+    align-items: center;
+    justify-content: space-between;
+    padding: auto;
+    width: 100%;
+    display: flex;
+    p {
+        margin: 0px 0px 0px 12px;
     }
 }
 
@@ -55,8 +61,77 @@ h1 {
     font-family: Montserrat; 
 }
 
+@media (max-width: 1545px) {
+    .divHome {
+        padding: 10px 230px 10px 230px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .divHome {
+        padding: 10px 200px 10px 200px;
+    }
+}
+
+@media (max-width: 1383px) {
+    .divHome {
+        padding: 10px 170px 10px 170px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .divHome {
+        padding: 10px 140px 10px 140px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .divHome {
+        padding: 10px 115px 10px 115px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .divHome {
+        padding: 10px 90px 10px 90px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .divHome {
+        padding: 10px 60px 10px 60px;
+    }
+}
+
 @media (max-width: 991px) {
     .div {
         padding: 0 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .divHome {
+        padding: 10px 25px 10px 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    .divHome {
+        padding: 10px 0px 10px 0px;
+    }
+}
+
+@media (max-width: 450px) {
+    .releaseNote {
+        width: 35px;
+        align-items: center;
+        display: flex;
+        gap: 0px;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+    }
+    img {
+        padding: 0px 5px 0px 0px;
     }
 }
