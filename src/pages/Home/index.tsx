@@ -7,15 +7,20 @@ import Swal from 'sweetalert2';
 import styles from './Home.module.scss';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
-import ButtonCreateNote from '../../components/ButtonCreateNote';
+import {ButtonCreateNote} from '../../components/ButtonCreateNote';
 
 export default function Home() {
-    const [openModal, setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState<boolean>(false);
+    const [openModal2, setOpenModal2] = useState<boolean>(false);
+    const [openModal3, setOpenModal3] = useState<boolean>(false);
+    const [openModal4, setOpenModal4] = useState<boolean>(false);
 
     const [dataB1, setDataB1] = useState<any[]>([]); 
     const [dataB2, setDataB2] = useState<any[]>([]); 
     const [dataB3, setDataB3] = useState<any[]>([]); 
     const [dataB4, setDataB4] = useState<any[]>([]); 
+
+    const [larguraTela, setLarguraTela] = useState(window.innerWidth);
 
     useEffect(() => {
         try {
@@ -66,19 +71,33 @@ export default function Home() {
         }
     }, []);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setLarguraTela(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <div className={styles.div}>
             {/* Bimestre 1*/}
             <div className={styles.background}>
                 {/* Editar o styles: header e trashbutton */}
                 <div className={styles.header}>
-                    <h1>Bimestre 1</h1>
-                    <button onClick={() => setOpenModal(true)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
-                        <p>Lançar Nota</p>
+                    <h1>Bimestre 1</h1>             
+                    <button onClick={() => setOpenModal(!openModal)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
+                        {larguraTela > 450 && (
+                            <p>Lançar nota</p>
+                        )}
                         <img src="/toAdd.png" alt="Adicionar" />
                     </button>
                     <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
-                    <ButtonCreateNote isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}/>
+                    <ButtonCreateNote isOpen={openModal} setOpenModal={setOpenModal} bimester={'Bimestre 1'}/>
                 </div>
                 <div className={styles.container}>
                     {dataB1.map((item: any) => (
@@ -88,7 +107,17 @@ export default function Home() {
             </div>
             {/* Bimestre 2*/}
             <div className={styles.background}>
-                <h1>Bimestre 2</h1>
+                <div className={styles.header}>
+                    <h1>Bimestre 2</h1>
+                    <button onClick={() => setOpenModal2(!openModal2)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
+                        {larguraTela > 450 && (
+                            <p>Lançar nota</p>
+                        )}
+                        <img src="/toAdd.png" alt="Adicionar" />
+                    </button>
+                    <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
+                    <ButtonCreateNote isOpen={openModal2} setOpenModal={setOpenModal2} bimester={'Bimestre 2'}/>
+                </div>
                 <div className={styles.container}>
                     {dataB2.map((item: any) => (
                         <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
@@ -97,7 +126,17 @@ export default function Home() {
             </div>
             {/* Bimestre 3*/}
             <div className={styles.background}>
-                <h1>Bimestre 3</h1>
+                <div className={styles.header}>
+                    <h1>Bimestre 2</h1>
+                    <button onClick={() => setOpenModal3(!openModal3)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
+                        {larguraTela > 450 && (
+                            <p>Lançar nota</p>
+                        )}
+                        <img src="/toAdd.png" alt="Adicionar" />
+                    </button>
+                    <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
+                    <ButtonCreateNote isOpen={openModal3} setOpenModal={setOpenModal3} bimester={'Bimestre 3'}/>
+                </div>
                 <div className={styles.container}>
                     {dataB3.map((item: any) => (
                         <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
@@ -106,7 +145,17 @@ export default function Home() {
             </div>
             {/* Bimestre 4*/}
             <div className={styles.background}>
-                <h1>Bimestre 4</h1>
+                <div className={styles.header}>
+                    <h1>Bimestre 2</h1>
+                    <button onClick={() => setOpenModal4(!openModal4)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
+                        {larguraTela > 450 && (
+                            <p>Lançar nota</p>
+                        )}
+                        <img src="/toAdd.png" alt="Adicionar" />
+                    </button>
+                    <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
+                    <ButtonCreateNote isOpen={openModal4} setOpenModal={setOpenModal4} bimester={'Bimestre 4'}/>
+                </div>
                 <div className={styles.container}>
                     {dataB4.map((item: any) => (
                         <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />

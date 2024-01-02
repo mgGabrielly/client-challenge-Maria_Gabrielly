@@ -1,10 +1,10 @@
-.backModal {
+.background {
     position: fixed;
     top: 0px;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background-color: 'aqua';
+    background-color: rgba(42, 41, 41, 0.3);
     z-index: 1000;
 }
 
@@ -13,8 +13,115 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    padding: 150px;
-    background-color: #FFFFFF;
+    padding: 20px;
+    background-color: #0F0F0F;
     border-radius: 8px;
-    color: black;
+    color: #FFFFFF;
+    font-family: Montserrat;
+    width: 500px;
+}
+
+.close {
+    cursor: pointer;
+    object-fit: contain;
+    object-position: right;
+    width: 32px;
+    overflow: hidden;
+    align-self: stretch;
+    max-width: 100%;
+    display: block;
+}
+
+.header {
+    align-self: stretch;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    font-size: 30px;
+    font-style: normal;
+}
+
+.title {
+    justify-content: center;
+    color: #FFFFFF;
+    margin-top: 8px;
+}
+
+h4 {
+    font-size: 18px;
+    margin: 0px;
+    padding: 15px 0px 8px 0px;
+}
+
+h5 {
+    margin: 0px;
+    padding: 15px 0px 8px 0px;
+}
+
+.buttonDisciplina {
+    width: 100px;
+    align-items: center;
+    border-radius: 12px;
+    padding: 8px;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    margin-left: auto;
+    margin-top: 1em;
+    margin: 16px 5px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.inputNote {
+    width: 40px;
+    border-radius: 12px;
+    display: flex;
+    padding: 12px 16px;
+    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    text-align: center;
+    background-color: #0F0F0F;
+    border: 2px solid rgba(79, 74, 74, 0.3);
+}
+
+.customPopup {
+    background-color: #0F0F0F;
+}
+
+.customTitle {
+    font-family: Montserrat; 
+    font-weight: bold;
+}
+
+.buttonModel {
+    align-items: center;
+    border-radius: 12px;
+    background-color: var(--Visual-primaria-ativo, #e9ff1a);
+    box-shadow: 0px 20px 60px 0px rgba(0, 0, 0, 0.08);
+    padding: 8px 20px;
+    color: #0F0F0F;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    margin-left: auto;
+    margin-top: 1em;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .modal {
+        width: 300px;
+    }
+}
+@media (max-width: 600px) {
+    .header {
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
 }
