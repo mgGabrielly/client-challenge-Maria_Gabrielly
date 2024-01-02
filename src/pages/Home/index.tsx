@@ -84,82 +84,83 @@ export default function Home() {
     }, []);
 
     return (
-        <div className={styles.div}>
-            {/* Bimestre 1*/}
-            <div className={styles.background}>
-                {/* Editar o styles: header e trashbutton */}
-                <div className={styles.header}>
-                    <h1>Bimestre 1</h1>             
-                    <button onClick={() => setOpenModal(!openModal)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
-                        {larguraTela > 450 && (
-                            <p>Lançar nota</p>
-                        )}
-                        <img src="/toAdd.png" alt="Adicionar" />
-                    </button>
-                    <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
-                    <ButtonCreateNote isOpen={openModal} setOpenModal={setOpenModal} bimester={'Bimestre 1'}/>
+        <div className={styles.divGeral}> 
+            <div className={styles.divHome}>
+                {/* Bimestre 1*/}
+                <div className={styles.background}>
+                    <div className={styles.header}>
+                        <h1>Bimestre 1</h1>             
+                        <button onClick={() => setOpenModal(!openModal)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
+                            {larguraTela > 450 && (
+                                <p>Lançar nota</p>
+                            )}
+                            <img src="/toAdd.png" alt="Adicionar" />
+                        </button>
+                        <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
+                        <ButtonCreateNote isOpen={openModal} setOpenModal={setOpenModal} bimester={'Bimestre 1'}/>
+                    </div>
+                    <div className={styles.container}>
+                        {dataB1.map((item: any) => (
+                            <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
+                        ))}
+                    </div>
                 </div>
-                <div className={styles.container}>
-                    {dataB1.map((item: any) => (
-                        <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
-                    ))}
+                {/* Bimestre 2*/}
+                <div className={styles.background}>
+                    <div className={styles.header}>
+                        <h1>Bimestre 2</h1>
+                        <button onClick={() => setOpenModal2(!openModal2)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
+                            {larguraTela > 450 && (
+                                <p>Lançar nota</p>
+                            )}
+                            <img src="/toAdd.png" alt="Adicionar" />
+                        </button>
+                        <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
+                        <ButtonCreateNote isOpen={openModal2} setOpenModal={setOpenModal2} bimester={'Bimestre 2'}/>
+                    </div>
+                    <div className={styles.container}>
+                        {dataB2.map((item: any) => (
+                            <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
+                        ))}
+                    </div>
                 </div>
-            </div>
-            {/* Bimestre 2*/}
-            <div className={styles.background}>
-                <div className={styles.header}>
-                    <h1>Bimestre 2</h1>
-                    <button onClick={() => setOpenModal2(!openModal2)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
-                        {larguraTela > 450 && (
-                            <p>Lançar nota</p>
-                        )}
-                        <img src="/toAdd.png" alt="Adicionar" />
-                    </button>
-                    <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
-                    <ButtonCreateNote isOpen={openModal2} setOpenModal={setOpenModal2} bimester={'Bimestre 2'}/>
+                {/* Bimestre 3*/}
+                <div className={styles.background}>
+                    <div className={styles.header}>
+                        <h1>Bimestre 2</h1>
+                        <button onClick={() => setOpenModal3(!openModal3)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
+                            {larguraTela > 450 && (
+                                <p>Lançar nota</p>
+                            )}
+                            <img src="/toAdd.png" alt="Adicionar" />
+                        </button>
+                        <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
+                        <ButtonCreateNote isOpen={openModal3} setOpenModal={setOpenModal3} bimester={'Bimestre 3'}/>
+                    </div>
+                    <div className={styles.container}>
+                        {dataB3.map((item: any) => (
+                            <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
+                        ))}
+                    </div>
                 </div>
-                <div className={styles.container}>
-                    {dataB2.map((item: any) => (
-                        <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
-                    ))}
-                </div>
-            </div>
-            {/* Bimestre 3*/}
-            <div className={styles.background}>
-                <div className={styles.header}>
-                    <h1>Bimestre 2</h1>
-                    <button onClick={() => setOpenModal3(!openModal3)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
-                        {larguraTela > 450 && (
-                            <p>Lançar nota</p>
-                        )}
-                        <img src="/toAdd.png" alt="Adicionar" />
-                    </button>
-                    <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
-                    <ButtonCreateNote isOpen={openModal3} setOpenModal={setOpenModal3} bimester={'Bimestre 3'}/>
-                </div>
-                <div className={styles.container}>
-                    {dataB3.map((item: any) => (
-                        <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
-                    ))}
-                </div>
-            </div>
-            {/* Bimestre 4*/}
-            <div className={styles.background}>
-                <div className={styles.header}>
-                    <h1>Bimestre 2</h1>
-                    <button onClick={() => setOpenModal4(!openModal4)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
-                        {larguraTela > 450 && (
-                            <p>Lançar nota</p>
-                        )}
-                        <img src="/toAdd.png" alt="Adicionar" />
-                    </button>
-                    <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
-                    <ButtonCreateNote isOpen={openModal4} setOpenModal={setOpenModal4} bimester={'Bimestre 4'}/>
-                </div>
-                <div className={styles.container}>
-                    {dataB4.map((item: any) => (
-                        <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
-                    ))}
+                {/* Bimestre 4*/}
+                <div className={styles.background}>
+                    <div className={styles.header}>
+                        <h1>Bimestre 2</h1>
+                        <button onClick={() => setOpenModal4(!openModal4)} className={styles.releaseNote} data-tooltip-id="my-tooltip-styles" data-tooltip-content="Adicionar">
+                            {larguraTela > 450 && (
+                                <p>Lançar nota</p>
+                            )}
+                            <img src="/toAdd.png" alt="Adicionar" />
+                        </button>
+                        <Tooltip id="my-tooltip-styles" className={styles.tooltip}/>
+                        <ButtonCreateNote isOpen={openModal4} setOpenModal={setOpenModal4} bimester={'Bimestre 4'}/>
+                    </div>
+                    <div className={styles.container}>
+                        {dataB4.map((item: any) => (
+                            <NoteBox key={item.id} id={item.id} bimester={item.bimester} discipline={item.discipline} note={item.note} createdAt={item.createdAt} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
