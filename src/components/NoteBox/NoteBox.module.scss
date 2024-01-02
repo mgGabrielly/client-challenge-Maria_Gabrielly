@@ -1,0 +1,99 @@
+.div {
+    display: flex;
+    gap: 1px;
+    padding: 0 1px;
+}
+
+.box {
+    width: 158px;
+    height: 146px;
+    flex-shrink: 0;
+    border-radius: 20px;
+}
+
+.disciplineDate {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0 16px;
+}
+
+.discipline {
+    color: var(--Texto-primaria, #ECEDEE);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 20px 0px 5px;
+}
+
+.date {
+    color: var(--Texto-primaria, #ECEDEE);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px; 
+    margin: 5px 0px 30px;
+}
+
+.note {
+    background: rgba(15, 15, 15, 0.70);
+    display: inline-flex;
+    width: 158px;
+    height: 30px;
+    padding: 5px 0px 5px 13.825px;
+    align-items: center;
+    flex-shrink: 0;
+    color: #FF5964;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px; 
+}
+
+.imgNote {
+    margin-right: 10px; 
+}
+
+.trash{
+    background-color: #0f0f0f;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    padding: 5px 10px 5px 5px;
+}
+
+.trashButton {
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer;
+}
+
+.customPopup {
+    background-color: #0F0F0F;
+}
+
+.customTitle {
+    font-family: Montserrat; 
+    font-weight: bold;
+}
+
+.tooltip {
+    color: #ECEDEE;
+    background-color: #222;
+    font-family: Montserrat; 
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 120px;
+        height: 130px;
+    }
+    .note {
+        width: 120px;
+        height: 18px;
+        padding: 5px 0px 5px 10px;
+    }
+}
