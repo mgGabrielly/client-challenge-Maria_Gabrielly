@@ -10,16 +10,6 @@
 .background {
     background-color: #0f0f0f;
     margin: 0px;
-
-    h1 {
-        color: #FFFFFF;
-        margin: 30px 0px 40px;
-        font-family: Montserrat;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 18px; 
-    }
 }
 
 .container {
@@ -28,25 +18,36 @@
     gap: 15px;
 }
 
+h1 {
+    color: #FFFFFF;
+    margin: 30px 0px 40px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+
 .header {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 195px;
 }
 
-// .releaseNote{
-//     justify-content: space-between;
-//     align-items: center;
-//     flex-direction: column;
-//     border-radius: 12px;
-//     background-color: var(--Visual-primaria-ativo, #e9ff1a);
-//     align-self: stretch;
-//     display: flex;
-//     gap: 10px;
-//     padding: 3px 21px;
-// }
+.releaseNote{
+    align-items: center;
+    border-radius: 12px;
+    background-color: var(--Visual-primaria-ativo, #e9ff1a);
+    display: flex;
+    gap: 5px;
+    margin: 0px 25px 0px 0px;
+
+    p{
+        margin: 0px;
+    }
+}
 
 .tooltip {
     color: #ECEDEE;
